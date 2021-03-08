@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Account } from '../interfaces/account';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AccountService } from '../services/account.service';
-import { TransactionService } from '../services/transaction.service';
 
 @Component({
   selector: 'app-tab4',

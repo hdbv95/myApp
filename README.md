@@ -32,3 +32,9 @@ El proyecto se conforma en base a los servicios de transacciones(transaction),cu
 Se utiliza un guard para evitar la navegación en la aplicacion a usuarios no autenticados.
 
 Se genero componentes para el listado de las cuentas en el tab principal y para el listado de sus movimientos.
+## **Pruebas Unitarias**
+Se realizo las siguientes pruebas unitarias en el servicio de cuentas **AccountService**:
+
+- test newAccount function
+- test updateAccount for unexisting account
+- test newAccount when user have no accounts
