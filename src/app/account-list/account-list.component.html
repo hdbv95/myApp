@@ -1,0 +1,18 @@
+
+<ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+  <ion-refresher-content></ion-refresher-content>
+</ion-refresher>
+
+<div *ngFor='let account of accounts'>
+    <mat-card (click)='getDetails(account.accountNumber)'>
+      <mat-icon aria-hidden="false">account_balance</mat-icon>
+      <mat-card-header>
+        <mat-card-title>{{account.name}}</mat-card-title>
+        <mat-card-subtitle>{{account.type}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        {{account.currency}} {{account.balance|currency}}
+      </mat-card-content>
+  </mat-card>
+  <mat-divider></mat-divider>
+</div>

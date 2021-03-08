@@ -1,17 +1,51 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      New Account
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <form [formGroup]=newAccountForm (ngSubmit)='onSubmit()'>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-item>
+      <ion-label>User ID:</ion-label>
+      <ion-input formControlName='userId' type='number' pattern='\d{12}'></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Account name:</ion-label>
+      <ion-input formControlName='accountName' type='text'></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Bank entity:</ion-label>
+      <ion-input formControlName='bankEntity' type='text'></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Account number:</ion-label>
+      <ion-input formControlName='accountNumber' type='number' pattern='\d{11}'></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Account Type:</ion-label>
+      <ion-select formControlName='accountType' placeholder="Select One">
+        <ion-select-option value="ahorros">Ahorros</ion-select-option>
+        <ion-select-option value="corriente">Corriente</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Currency:</ion-label>
+      <ion-select formControlName='currency' placeholder="Select One">
+        <ion-select-option value="USD">USD</ion-select-option>
+        <ion-select-option value="COP">COP</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button type="submit">Create Account</ion-button>
+  </form>
+  <div class="error" *ngIf='!success && submitted'>Please check your inputs</div>
+  <div class="success" *ngIf='success && submitted'>Success</div>
 </ion-content>

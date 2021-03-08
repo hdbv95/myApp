@@ -1,0 +1,24 @@
+[
+    {
+        "userId":1,
+        "accountNumber":1,
+        "transactionNumber":1,
+        "amount":-100.50,
+        "balance":1000.50,
+        "description": "buy shoes"
+    },{
+        "userId":1,
+        "accountNumber":1,
+        "transactionNumber":2,
+        "amount":-50,
+        "balance":1100.50,
+        "description": "buy groceries"
+    },{
+        "userId":1,
+        "accountNumber":2,
+        "transactionNumber":3,
+        "amount":-120,
+        "balance":300.90,
+        "description": "payment"
+    }
+]

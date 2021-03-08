@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div>
+    <mat-list *ngFor='let transaction of accountTransactions'>
+          <div style="display: flex 1; ">
+            <div >
+              {{transaction.description}}
+            </div>
+            <div [ngStyle]="{'color': transaction.amount>0? 'green' : 'red'}" style="text-align: right;">
+            {{transaction.amount|currency}}
+            </div>
+            <div style="text-align: right;">
+            {{transaction.balance|currency}}
+            </div>
+          </div>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </div>
+</ion-content>

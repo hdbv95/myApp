@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Transfers
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]='transferForm' (ngSubmit)='onSubmit()'>
+    <ion-item>
+      <ion-label>From Account :</ion-label>
+      <ion-select formControlName='fromAccountNumber' placeholder="From" >
+        <ion-select-option *ngFor="let account of accounts" [value]="account.accountNumber">
+          {{account.name}} => {{account.currency}}{{account.balance|currency}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>To Account :</ion-label>
+      <ion-select formControlName='toAccountNumber' placeholder="to" >
+        <ion-select-option *ngFor="let account of accounts" [value]="account.accountNumber">
+          {{account.name}} => {{account.currency}}{{account.balance|currency}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Amount:</ion-label>
+      <ion-input formControlName='amount' type='number'></ion-input>
+    </ion-item>
+    <ion-button type="submit">Change Name</ion-button>
+  </form>
+  <div class="success" *ngIf='success && submitted'>Success</div>
+  <div class="error" *ngIf='submitted && !success '>Please check your inputs</div>
+</ion-content>
