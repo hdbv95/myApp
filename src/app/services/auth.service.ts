@@ -12,7 +12,7 @@ export class AuthService {
   password=1234;
   userId=1;
 
-  constructor(private router:Router,private http:HttpClient) { }
+  constructor(private router:Router) { }
 
   public login(userName:string,password:number){
     if(userName===this.userName && password===this.password){

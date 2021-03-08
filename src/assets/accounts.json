@@ -1,6 +1,6 @@
 [ 
     {
-        "userId":1,
+        "userId":123456789012,
         "bankEntity":"bank1",
         "accountNumber":1,
         "type": "ahorros",
@@ -8,7 +8,7 @@
         "balance":1000.50,
         "currency":"USD"
     },{
-        "userId":1,
+        "userId":123456789012,
         "bankEntity":"bank1",
         "accountNumber":2,
         "type": "corriente",
